@@ -15,21 +15,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Locations List Actions
+        //LocationsList Actions
 
-        //println("testmark 1")
-        var list = getLocations(this)
-        println(list)
+        val list = getLocations(this)
         val listSize = list.locations!!.size
-        println(list.locations?.get(0)?.latitude)
-        println(list.locations?.get(0)?.longitude)
-        val complete = getCompleteAddressString(list.locations!!.get(1).latitude,list.locations!!.get(1).longitude,this)
 
         //RecyclerView Actions
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val data = ArrayList<LocationViewModel>()
+        val data = mutableListOf<LocationViewModel>()
         for(i in 0 until listSize){
             data.add(
                 LocationViewModel(

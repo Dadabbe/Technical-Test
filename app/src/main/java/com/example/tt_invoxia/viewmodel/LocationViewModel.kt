@@ -46,7 +46,7 @@ fun getCompleteAddressString(LATITUDE: Double, LONGITUDE: Double, context: Conte
                 strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n")
             }
             strAdd = strReturnedAddress.toString()
-            Log.w("My Current loction add", strReturnedAddress.toString())
+            //Log.w("My Current loction add", strReturnedAddress.toString())
         } else {
             Log.w("Location Error", "No Address returned!")
         }
@@ -67,3 +67,4 @@ fun getDateTime(s: String): String?{
         return e.toString()
     }
 }
+

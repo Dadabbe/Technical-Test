@@ -1,4 +1,5 @@
 package com.example.tt_invoxia.viewmodel
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class LocationAdapter(private var locationList: MutableList<LocationViewModel>) 
             return ViewHolder(view)
         }
 
+        @SuppressLint("NotifyDataSetChanged")
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
             val ItemsViewModel = locationList[position]
@@ -24,9 +26,7 @@ class LocationAdapter(private var locationList: MutableList<LocationViewModel>) 
             holder.textViewDate.text = ItemsViewModel.date.toString()
             holder.deleteButton.setOnClickListener{
                     locationList.removeAt(position)
-                    notifyItemRemoved(position)
-                    notifyItemRangeChanged(position, locationList.size)
-                    holder.itemView.visibility = View.GONE
+                    notifyDataSetChanged()
             }
 
         }

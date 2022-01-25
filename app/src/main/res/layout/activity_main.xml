@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize = "20sp"
+            android:layout_weight="0.1"
+            android:text="@string/title"
+            android:gravity="center"
+            />
+
+        <fragment
+            android:id="@+id/titleFragment"
+            android:name="com.example.tt_invoxia.view.ListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9" />
+    </LinearLayout>
+
+</layout>
